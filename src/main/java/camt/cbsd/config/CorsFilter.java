@@ -13,6 +13,12 @@ public class CorsFilter {
             public void addCorsMappings(CorsRegistry registry){
                 registry.addMapping("/**");
             }
+            @Override
+            public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry
+                        .addResourceHandler("/files/**")
+                        .addResourceLocations("file:///C/Users/CAMT/Documents/GitHub/SE331-lab05/images/");
+            }
 
         };
     }
