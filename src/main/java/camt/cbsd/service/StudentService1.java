@@ -20,7 +20,7 @@ public class StudentService1 implements StudentService{
                 3.59, "images/tu.jpg", false, 15, "The great man ever!!");
         students.add(student);
         student = new Student(3, "SE-007", "Jurgen", "Kloop",
-                2.15, "images/Kloop.gif", true, 2, "The man for Kop");
+                2.15, "../../images/Kloop.gif", true, 2, "The man for Kop");
         students.add(student);
         return students;
     }
