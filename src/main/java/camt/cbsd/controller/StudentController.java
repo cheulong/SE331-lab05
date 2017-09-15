@@ -1,6 +1,7 @@
 package camt.cbsd.controller;
 
 import camt.cbsd.entity.Student;
+import camt.cbsd.service.StudentService;
 import camt.cbsd.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +12,10 @@ import java.util.List;
 
 @RestController("/student")
 public class StudentController {
-    StudentServiceImpl studentServiceImpl;
+    StudentService studentService;
     @Autowired
-    public void setStudentService(StudentServiceImpl studentServiceImpl){
-        this.studentServiceImpl = studentServiceImpl;
+    public void setStudentService(StudentService studentService){
+        this.studentService = studentService;
     }
     @GetMapping
     public ResponseEntity<?> getStudents(){
@@ -32,7 +33,7 @@ public class StudentController {
 //        student=new Student(3,"SE-003","Jurgen","Kloop",
 //                2.15,"images/Kloop.gif",true,2,"The man for Kop");
 //        students.add(student);
-        List<Student> students= studentServiceImpl.getStudents();
+        List<Student> students= studentService.getStudents();
         return ResponseEntity.ok(students);
     }
 }
